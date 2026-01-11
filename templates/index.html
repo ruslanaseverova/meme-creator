@@ -38,6 +38,9 @@
               <option value="meme_1.jpg" {% if selected_image == 'meme_1.jpg' %}selected{% endif %}>Девочка и пожар</option>
               <option value="meme_2.jpg" {% if selected_image == 'meme_2.jpg' %}selected{% endif %}>Две кнопки</option>
               <!--Задание №1. Добавь сюда новые мемы -->
+              <option value="meme_3.jpg" {% if selected_image == 'meme_3.jpg' %}selected{% endif %}>Кот</option>
+              <option value="meme_4.jpg" {% if selected_image == 'meme_4.jpg' %}selected{% endif %}>Сказка</option>
+              <option value="meme_5.jpg" {% if selected_image == 'meme_5.jpg' %}selected{% endif %}>Школа</option>
 
 
             </select>
@@ -56,8 +59,8 @@
               <option value="white" {% if selected_color == 'white' %}selected{% endif %}>Белый</option>
               <option value="black" {% if selected_color == 'black' %}selected{% endif %}>Черный</option>
               <!--Доп.Задание №1. Добавь сюда новые цвета -->
-
-
+              <option value="red" {% if selected_color == 'red' %}selected{% endif %}>Красный</option>
+              <option value="blue" {% if selected_color == 'blue' %}selected{% endif %}>Синий</option>
             </select>
           </li>
           <li class="form-list_item">
@@ -74,14 +77,15 @@
     </div>
     <div class="meme-block" id="memeBlock">
       
-      <p class="text_top" style="<!-- Задание №3. Помещаем переменные в CSS -->">
-        <!-- Задание №2. Помещаем переменную с текстом -->
-      </p>
-
+      <p class="text_top" style= "top: {{x1}}px; color: {{color}}">
+        <!-- Задание №2. Помещаем переменную с текстом --> 
+         {{text1}}
+      </p> 
       <img class="meme" src="{{ url_for('serve_images', path=selected_image) }}" alt="{{ selected_image }}">
 
-      <p class="text_bottom" style="<!-- Задание №3. Помещаем переменные в CSS -->">
+      <p class="text_bottom" style="podtop: {{x2}}px; color: {{color}}">
         <!-- Задание №2. Помещаем переменную с текстом -->
+         {{text2}}
       </p>
     </div>
     {% endblock %}
